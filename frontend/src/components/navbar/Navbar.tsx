@@ -7,8 +7,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
-    return pathname === path 
-      ? "text-black border-b-2 border-black" 
+    return pathname === path
+      ? "text-black border-b-2 border-black"
       : "text-gray-600 hover:text-black transition-colors";
   };
 
@@ -16,25 +16,16 @@ export default function Navbar() {
     <header className="font-sans border-b">
       <nav className="container mx-auto px-4 h-16">
         <div className="flex h-full items-center justify-between">
-          <Link 
-            href="/" 
-            className="text-xl font-medium"
-          >
+          <Link href="/" className="text-xl font-medium">
             AliRitaGames
           </Link>
 
           {/* Main Navigation */}
           <div className="flex items-center space-x-8">
-            <Link 
-              href="/guess" 
-              className={`${isActive("/about")} py-1`}
-            >
-                Play Guess
+            <Link href="/guess" className={`${isActive("/about")} py-1`}>
+              Play Guess
             </Link>
-            <Link 
-              href="/about" 
-              className={`${isActive("/about")} py-1`}
-            >
+            <Link href="/about" className={`${isActive("/about")} py-1`}>
               About
             </Link>
           </div>
