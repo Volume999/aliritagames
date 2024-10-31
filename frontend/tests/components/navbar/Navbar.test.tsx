@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Navbar from "@/components/navbar/Navbar";
+import { renderWithNoSession } from "../../utils";
 
 vi.mock("next/navigation", () => ({
   usePathname: () => "/",
@@ -22,11 +23,10 @@ describe("Navbar", () => {
   });
 
   it("renders all navigation links", () => {
-    render(<Navbar />);
+    renderWithNoSession(<Navbar />);
 
     expect(screen.getByText("About")).toBeInTheDocument();
     expect(screen.getByText("Play Guess")).toBeInTheDocument();
-    expect(screen.getByText("Sign up")).toBeInTheDocument();
-    expect(screen.getByText("Log in")).toBeInTheDocument();
+    expect(screen.getByText("Sign In")).toBeInTheDocument();
   });
 });

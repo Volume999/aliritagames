@@ -1,9 +1,11 @@
 "use client";
 
+import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const { data: session } = useSession();
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -20,9 +22,8 @@ export default function Navbar() {
             AliRitaGames
           </Link>
 
-          {/* Main Navigation */}
           <div className="flex items-center space-x-8">
-            <Link href="/guess" className={`${isActive("/about")} py-1`}>
+            <Link href="/guess" className={`${isActive("/guess")} py-1`}>
               Play Guess
             </Link>
             <Link href="/about" className={`${isActive("/about")} py-1`}>
@@ -30,14 +31,27 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Auth */}
-          <div className="flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-black transition-colors">
-              Log in
-            </button>
-            <button className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
-              Sign up
-            </button>
+          <div className="flex items-center gap-4">
+            {session ? (
+              <>
+                <span className="font-medium">
+                  {session.user?.name || session.user?.name}
+                </span>
+                <button
+                  onClick={() => signOut()}
+                  className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
         </div>
       </nav>
