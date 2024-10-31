@@ -37,7 +37,6 @@
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^8",
     "eslint-config-next": "15.0.2",
-    "husky": "^8.0.0",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
