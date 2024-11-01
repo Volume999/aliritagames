@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       keyframes: {
         "button-press": {
-          "0%, 100%": {transform: "scale(1)"},
-          "50%": {transform: "scale(0.98)"}
-        }
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(0.98)" },
+        },
       },
       animation: {
-        "button-press": "button-press 0.5s ease-in-out"
+        "button-press": "button-press 0.5s ease-in-out",
       },
       colors: {
         background: "var(--background)",
