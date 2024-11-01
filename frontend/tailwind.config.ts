@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "button-press": {
+          "0%, 100%": {transform: "scale(1)"},
+          "50%": {transform: "scale(0.98)"}
+        }
+      },
+      animation: {
+        "button-press": "button-press 0.5s ease-in-out"
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

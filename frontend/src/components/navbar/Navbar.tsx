@@ -2,17 +2,9 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { data: session } = useSession();
-  const pathname = usePathname();
-
-  const isActive = (path: string) => {
-    return pathname === path
-      ? "text-black border-b-2 border-black"
-      : "text-gray-600 hover:text-black transition-colors";
-  };
 
   return (
     <header className="font-sans border-b">
@@ -23,10 +15,10 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center space-x-8">
-            <Link href="/guess" className={`${isActive("/guess")} py-1`}>
-              Play Guess
+            <Link href="/button" className={`py-1`}>
+              Play Button
             </Link>
-            <Link href="/about" className={`${isActive("/about")} py-1`}>
+            <Link href="/about" className={`py-1`}>
               About
             </Link>
           </div>
