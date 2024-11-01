@@ -26,7 +26,7 @@ describe("Navbar", () => {
     renderWithNoSession(<Navbar />);
 
     expect(screen.getByText("About")).toBeInTheDocument();
-    expect(screen.getByText("Play Button")).toBeInTheDocument();
+    expect(screen.getByText("Games")).toBeInTheDocument();
     expect(screen.getByText("Sign In")).toBeInTheDocument();
   });
 });
