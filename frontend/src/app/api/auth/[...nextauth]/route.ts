@@ -39,12 +39,14 @@ const authOptions: AuthOptions = {
       // Add user data to session
       if (session?.user) {
         session.user.name = token.name;
+        session.user.id = token.id;
       }
       return session;
     },
     async jwt({ token, user }) {
       if (user) {
         token.name = user.name;
+        token.id = user.id;
       }
       return token;
     },

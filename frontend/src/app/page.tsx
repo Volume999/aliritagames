@@ -18,6 +18,13 @@ export default function Home() {
             <Image src="/button-game.svg" alt="" width={20} height={20} />
             The Button
           </Link>
+          <Link
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="/guess"
+          >
+            <Image src="/guess.svg" alt="" width={20} height={20} />
+            Guess
+          </Link>
         </div>
       </main>
     </div>
